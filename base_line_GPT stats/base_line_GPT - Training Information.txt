@@ -1,0 +1,462 @@
+
+Basic Specs
+----------------------------------------------------
+Input Size: torch.Size([64, 512])
+
+
+Model Specs: 
+TransformerClass(
+  (embedding): Embedding(74, 512)
+  (positional_encoding): PositionalEncoding(
+    (dropout): Dropout(p=0.1, inplace=False)
+  )
+  (blocks): Sequential(
+    (0): TransformerBlock(
+      (multi_atten): MultiHeadAttention(
+        (heads): ModuleList(
+          (0-7): 8 x Head(
+            (key): Linear(in_features=512, out_features=64, bias=False)
+            (query): Linear(in_features=512, out_features=64, bias=False)
+            (value): Linear(in_features=512, out_features=64, bias=False)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (projection): Linear(in_features=512, out_features=512, bias=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (feedforward): FeedForward(
+        (fflayer): Sequential(
+          (0): Linear(in_features=512, out_features=2048, bias=True)
+          (1): ReLU()
+          (2): Linear(in_features=2048, out_features=512, bias=True)
+          (3): Dropout(p=0.2, inplace=False)
+        )
+      )
+      (layernorm1): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+      (layernorm2): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+    )
+    (1): TransformerBlock(
+      (multi_atten): MultiHeadAttention(
+        (heads): ModuleList(
+          (0-7): 8 x Head(
+            (key): Linear(in_features=512, out_features=64, bias=False)
+            (query): Linear(in_features=512, out_features=64, bias=False)
+            (value): Linear(in_features=512, out_features=64, bias=False)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (projection): Linear(in_features=512, out_features=512, bias=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (feedforward): FeedForward(
+        (fflayer): Sequential(
+          (0): Linear(in_features=512, out_features=2048, bias=True)
+          (1): ReLU()
+          (2): Linear(in_features=2048, out_features=512, bias=True)
+          (3): Dropout(p=0.2, inplace=False)
+        )
+      )
+      (layernorm1): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+      (layernorm2): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+    )
+    (2): TransformerBlock(
+      (multi_atten): MultiHeadAttention(
+        (heads): ModuleList(
+          (0-7): 8 x Head(
+            (key): Linear(in_features=512, out_features=64, bias=False)
+            (query): Linear(in_features=512, out_features=64, bias=False)
+            (value): Linear(in_features=512, out_features=64, bias=False)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (projection): Linear(in_features=512, out_features=512, bias=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (feedforward): FeedForward(
+        (fflayer): Sequential(
+          (0): Linear(in_features=512, out_features=2048, bias=True)
+          (1): ReLU()
+          (2): Linear(in_features=2048, out_features=512, bias=True)
+          (3): Dropout(p=0.2, inplace=False)
+        )
+      )
+      (layernorm1): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+      (layernorm2): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+    )
+    (3): TransformerBlock(
+      (multi_atten): MultiHeadAttention(
+        (heads): ModuleList(
+          (0-7): 8 x Head(
+            (key): Linear(in_features=512, out_features=64, bias=False)
+            (query): Linear(in_features=512, out_features=64, bias=False)
+            (value): Linear(in_features=512, out_features=64, bias=False)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (projection): Linear(in_features=512, out_features=512, bias=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (feedforward): FeedForward(
+        (fflayer): Sequential(
+          (0): Linear(in_features=512, out_features=2048, bias=True)
+          (1): ReLU()
+          (2): Linear(in_features=2048, out_features=512, bias=True)
+          (3): Dropout(p=0.2, inplace=False)
+        )
+      )
+      (layernorm1): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+      (layernorm2): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+    )
+    (4): TransformerBlock(
+      (multi_atten): MultiHeadAttention(
+        (heads): ModuleList(
+          (0-7): 8 x Head(
+            (key): Linear(in_features=512, out_features=64, bias=False)
+            (query): Linear(in_features=512, out_features=64, bias=False)
+            (value): Linear(in_features=512, out_features=64, bias=False)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (projection): Linear(in_features=512, out_features=512, bias=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (feedforward): FeedForward(
+        (fflayer): Sequential(
+          (0): Linear(in_features=512, out_features=2048, bias=True)
+          (1): ReLU()
+          (2): Linear(in_features=2048, out_features=512, bias=True)
+          (3): Dropout(p=0.2, inplace=False)
+        )
+      )
+      (layernorm1): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+      (layernorm2): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+    )
+    (5): TransformerBlock(
+      (multi_atten): MultiHeadAttention(
+        (heads): ModuleList(
+          (0-7): 8 x Head(
+            (key): Linear(in_features=512, out_features=64, bias=False)
+            (query): Linear(in_features=512, out_features=64, bias=False)
+            (value): Linear(in_features=512, out_features=64, bias=False)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (projection): Linear(in_features=512, out_features=512, bias=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (feedforward): FeedForward(
+        (fflayer): Sequential(
+          (0): Linear(in_features=512, out_features=2048, bias=True)
+          (1): ReLU()
+          (2): Linear(in_features=2048, out_features=512, bias=True)
+          (3): Dropout(p=0.2, inplace=False)
+        )
+      )
+      (layernorm1): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+      (layernorm2): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+    )
+    (6): TransformerBlock(
+      (multi_atten): MultiHeadAttention(
+        (heads): ModuleList(
+          (0-7): 8 x Head(
+            (key): Linear(in_features=512, out_features=64, bias=False)
+            (query): Linear(in_features=512, out_features=64, bias=False)
+            (value): Linear(in_features=512, out_features=64, bias=False)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (projection): Linear(in_features=512, out_features=512, bias=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (feedforward): FeedForward(
+        (fflayer): Sequential(
+          (0): Linear(in_features=512, out_features=2048, bias=True)
+          (1): ReLU()
+          (2): Linear(in_features=2048, out_features=512, bias=True)
+          (3): Dropout(p=0.2, inplace=False)
+        )
+      )
+      (layernorm1): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+      (layernorm2): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+    )
+    (7): TransformerBlock(
+      (multi_atten): MultiHeadAttention(
+        (heads): ModuleList(
+          (0-7): 8 x Head(
+            (key): Linear(in_features=512, out_features=64, bias=False)
+            (query): Linear(in_features=512, out_features=64, bias=False)
+            (value): Linear(in_features=512, out_features=64, bias=False)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (projection): Linear(in_features=512, out_features=512, bias=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (feedforward): FeedForward(
+        (fflayer): Sequential(
+          (0): Linear(in_features=512, out_features=2048, bias=True)
+          (1): ReLU()
+          (2): Linear(in_features=2048, out_features=512, bias=True)
+          (3): Dropout(p=0.2, inplace=False)
+        )
+      )
+      (layernorm1): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+      (layernorm2): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+    )
+  )
+  (final_layernorm): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+  (final_linear): Linear(in_features=512, out_features=74, bias=True)
+)
+
+
+
+
+
+Training Information
+--------------------------------------------------------------------------------
+Training Begin
+----------------------------------------------------
+There are 1 epochs, and for each epoch, there are 7812 batches of training data
+Total Training Steps: 7812
+Total Displaying Information: 16
+Optimizer name - AdamW learning rate: 0.0005
+lowest_val_loss started with 1.1582061052322388
+
+
+
+Message: 1 - Progress Summary - 500 batches
+--------------------------------
+Epoch: 1 / 1 || Batch: 500 / 7812 || Print Cycle: 1 / 16
+Average per-Batch Training Loss: 2.3330 || Average per-Batch Validation Loss: 1.8391
+This printing cycle took 6.38 minutes
+
+
+
+Message: 2 - Progress Summary - 500 batches
+--------------------------------
+Epoch: 1 / 1 || Batch: 1000 / 7812 || Print Cycle: 2 / 16
+Average per-Batch Training Loss: 1.5672 || Average per-Batch Validation Loss: 1.3101
+
+Model Improvement
+--------------------------------
+Average per-Batch Training Loss has decreased by 32.83%
+Average per-Batch Validation Loss has decreased by 28.77%
+
+This printing cycle took 6.35 minutes
+
+
+
+Message: 3 - Progress Summary - 500 batches
+--------------------------------
+Epoch: 1 / 1 || Batch: 1500 / 7812 || Print Cycle: 3 / 16
+Average per-Batch Training Loss: 1.2544 || Average per-Batch Validation Loss: 1.1975
+
+Model Improvement
+--------------------------------
+Average per-Batch Training Loss has decreased by 19.96%
+Average per-Batch Validation Loss has decreased by 8.59%
+
+This printing cycle took 6.35 minutes
+
+
+
+Message: 4 - Progress Summary - 500 batches
+--------------------------------
+Epoch: 1 / 1 || Batch: 2000 / 7812 || Print Cycle: 4 / 16
+Average per-Batch Training Loss: 1.1457 || Average per-Batch Validation Loss: 1.1453
+
+Model Improvement
+--------------------------------
+Average per-Batch Training Loss has decreased by 8.66%
+Average per-Batch Validation Loss has decreased by 4.36%
+
+Val Loss decreased from 1.158206 to 1.145299 - Saving the Best Model
+
+
+This printing cycle took 6.28 minutes
+
+
+
+Message: 5 - Progress Summary - 500 batches
+--------------------------------
+Epoch: 1 / 1 || Batch: 2500 / 7812 || Print Cycle: 5 / 16
+Average per-Batch Training Loss: 1.0800 || Average per-Batch Validation Loss: 1.1174
+
+Model Improvement
+--------------------------------
+Average per-Batch Training Loss has decreased by 5.74%
+Average per-Batch Validation Loss has decreased by 2.43%
+
+Val Loss decreased from 1.145299 to 1.117412 - Saving the Best Model
+
+
+This printing cycle took 6.14 minutes
+
+
+
+Message: 6 - Progress Summary - 500 batches
+--------------------------------
+Epoch: 1 / 1 || Batch: 3000 / 7812 || Print Cycle: 6 / 16
+Average per-Batch Training Loss: 1.0282 || Average per-Batch Validation Loss: 1.1073
+
+Model Improvement
+--------------------------------
+Average per-Batch Training Loss has decreased by 4.79%
+Average per-Batch Validation Loss has decreased by 0.91%
+
+Val Loss decreased from 1.117412 to 1.107278 - Saving the Best Model
+
+
+This printing cycle took 6.12 minutes
+
+
+
+Message: 7 - Progress Summary - 500 batches
+--------------------------------
+Epoch: 1 / 1 || Batch: 3500 / 7812 || Print Cycle: 7 / 16
+Average per-Batch Training Loss: 0.9851 || Average per-Batch Validation Loss: 1.1066
+
+Model Improvement
+--------------------------------
+Average per-Batch Training Loss has decreased by 4.20%
+Average per-Batch Validation Loss has decreased by 0.06%
+
+Val Loss decreased from 1.107278 to 1.106608 - Saving the Best Model
+
+
+This printing cycle took 6.13 minutes
+
+
+
+Message: 8 - Progress Summary - 500 batches
+--------------------------------
+Epoch: 1 / 1 || Batch: 4000 / 7812 || Print Cycle: 8 / 16
+Average per-Batch Training Loss: 0.9453 || Average per-Batch Validation Loss: 1.1115
+
+Model Improvement
+--------------------------------
+Average per-Batch Training Loss has decreased by 4.04%
+Average per-Batch Validation Loss has decreased by -0.44%
+
+This printing cycle took 6.13 minutes
+
+
+
+Message: 9 - Progress Summary - 500 batches
+--------------------------------
+Epoch: 1 / 1 || Batch: 4500 / 7812 || Print Cycle: 9 / 16
+Average per-Batch Training Loss: 0.9051 || Average per-Batch Validation Loss: 1.1214
+
+Model Improvement
+--------------------------------
+Average per-Batch Training Loss has decreased by 4.25%
+Average per-Batch Validation Loss has decreased by -0.89%
+
+This printing cycle took 6.13 minutes
+
+
+
+Message: 10 - Progress Summary - 500 batches
+--------------------------------
+Epoch: 1 / 1 || Batch: 5000 / 7812 || Print Cycle: 10 / 16
+Average per-Batch Training Loss: 0.8683 || Average per-Batch Validation Loss: 1.1394
+
+Model Improvement
+--------------------------------
+Average per-Batch Training Loss has decreased by 4.07%
+Average per-Batch Validation Loss has decreased by -1.60%
+
+This printing cycle took 6.11 minutes
+
+
+
+Message: 11 - Progress Summary - 500 batches
+--------------------------------
+Epoch: 1 / 1 || Batch: 5500 / 7812 || Print Cycle: 11 / 16
+Average per-Batch Training Loss: 0.8313 || Average per-Batch Validation Loss: 1.1587
+
+Model Improvement
+--------------------------------
+Average per-Batch Training Loss has decreased by 4.26%
+Average per-Batch Validation Loss has decreased by -1.69%
+
+This printing cycle took 6.12 minutes
+
+
+
+Message: 12 - Progress Summary - 500 batches
+--------------------------------
+Epoch: 1 / 1 || Batch: 6000 / 7812 || Print Cycle: 12 / 16
+Average per-Batch Training Loss: 0.7945 || Average per-Batch Validation Loss: 1.1866
+
+Model Improvement
+--------------------------------
+Average per-Batch Training Loss has decreased by 4.42%
+Average per-Batch Validation Loss has decreased by -2.41%
+
+This printing cycle took 6.14 minutes
+
+
+
+Message: 13 - Progress Summary - 500 batches
+--------------------------------
+Epoch: 1 / 1 || Batch: 6500 / 7812 || Print Cycle: 13 / 16
+Average per-Batch Training Loss: 0.7571 || Average per-Batch Validation Loss: 1.2163
+
+Model Improvement
+--------------------------------
+Average per-Batch Training Loss has decreased by 4.71%
+Average per-Batch Validation Loss has decreased by -2.50%
+
+This printing cycle took 6.14 minutes
+
+
+
+Message: 14 - Progress Summary - 500 batches
+--------------------------------
+Epoch: 1 / 1 || Batch: 7000 / 7812 || Print Cycle: 14 / 16
+Average per-Batch Training Loss: 0.7235 || Average per-Batch Validation Loss: 1.2502
+
+Model Improvement
+--------------------------------
+Average per-Batch Training Loss has decreased by 4.44%
+Average per-Batch Validation Loss has decreased by -2.79%
+
+This printing cycle took 6.13 minutes
+
+
+
+Message: 15 - Progress Summary - 500 batches
+--------------------------------
+Epoch: 1 / 1 || Batch: 7500 / 7812 || Print Cycle: 15 / 16
+Average per-Batch Training Loss: 0.6887 || Average per-Batch Validation Loss: 1.2777
+
+Model Improvement
+--------------------------------
+Average per-Batch Training Loss has decreased by 4.80%
+Average per-Batch Validation Loss has decreased by -2.20%
+
+This printing cycle took 6.14 minutes
+
+
+
+Message: 16 - Progress Summary - 312 batches
+--------------------------------
+Epoch: 1 / 1 || Batch: 7812 / 7812 || Print Cycle: 16 / 16
+Average per-Batch Training Loss: 0.6629 || Average per-Batch Validation Loss: 1.3022
+
+Model Improvement
+--------------------------------
+Average per-Batch Training Loss has decreased by 3.76%
+Average per-Batch Validation Loss has decreased by -1.92%
+
+This printing cycle took 4.94 minutes
+
+Saving the Last Model
+
+
+Overall training took 1.63 hours
+--------------------------------------------------------------------------------
+
+
+
